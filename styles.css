@@ -1,0 +1,95 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 20px;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 9px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.alert {
+  background-color: #e74c3c;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.team .member img {
+  width: 165px; /* Ukuran lebar gambar */
+  height: 165px; /* Ukuran tinggi gambar */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
+  border: 2px solid #2c3e50; /* Menambahkan border untuk mempercantik */
+}
+
+.team .member {
+  text-align: center;
+  margin: 10px; /* Memberikan jarak antar anggota */
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap; /* Supaya responsif, otomatis turun jika layar kecil */
+  justify-content: center; /* Agar anggota rata di tengah */
+  gap: 20px;
+}
+
+.gallery img {
+  width: 150px; /* Ukuran lebar gambar */
+  height: 150px; /* Ukuran tinggi gambar */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border-radius: 8px; /* Sedikit melengkungkan sudut */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek modern */
+  transition: transform 0.3s; /* Efek saat hover */
+}
+
+.gallery img:hover {
+  transform: scale(1.1); /* Membesarkan sedikit saat dihover */
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsif, menyesuaikan ukuran layar */
+  gap: 10px; /* Jarak antar gambar */
+  justify-items: center; /* Agar gambar rata tengah */
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #2c3e50;
+  color: white;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Kelas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Logo dan Navigasi -->
+  <header>
+    <div class="logo">91</div>
+    <nav>
+      <ul>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#informasi">Informasi</a></li>
+        <li><a href="#jadwal">Jadwal</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Peringatan -->
+  <div class="alert">
+    <p>Peringatan: Jangan lupa belajar untuk persiapan ASAS!</p>
+  </div>
+
+  <!-- Selamat Datang dan Waktu -->
+  <section id="welcome">
+    <h1>Selamat Datang di Website Kelas</h1>
+    <p id="current-date-time"></p>
+  </section>
+
+  <!-- Beranda -->
+  <section id="beranda">
+    <h2>Tujuan Kelas</h2>
+    <p>Menjadi kelas yang solid, berprestasi, dan selalu kompak.</p>
+
+    <h2>Berita Baru</h2>
+    <p>Asasmen Sumatif Akhir Semester (ASAS) akan berlangsung tanggal 2 Desember 2024!</p>
+  </section>
+
+  <!-- Informasi -->
+  <section id="informasi">
+    <h2>Organisasi Kelas</h2>
+    <div class="team">
+      <div class="member">
+        <img src="ana.png" alt="Ketua Kelas">
+        <h3>Anatasyah Kurnia</h3>
+        <p>Ketua Kelas</p>
+      </div>
+      <div class="member">
+        <img src="radit.png" alt="Wakil Ketua">
+        <h3>Raditya Rizky Santoso</h3>
+        <p>Wakil Ketua</p>
+      </div>
+      <div class="member">
+        <img src="tara.png" alt="Sekretaris 1">
+        <h3>Tara Meisya Rinjani</h3>
+        <p>Sekretaris 1</p>
+      </div>
+      <div class="member">
+        <img src="indah.png" alt="Sekretaris 2">
+        <h3>Anita Indah Pratiwi</h3>
+        <p>Sekretaris 2</p>
+      </div>
+      <div class="member">
+        <img src="rima.png" alt="Kebersihan 1">
+        <h3>Rima Yuliani</h3>
+        <p>Kebersihan 1</p>
+      </div>
+      <div class="member">
+        <img src="chiara.png" alt="Kebersihan 2">
+        <h3>Chiara Dewi Chatlina</h3>
+        <p>Kebersihan 2</p>
+      </div>
+      <!-- Tambahkan anggota lainnya -->
+    </div>
+  </section>
+
+  <!-- Jadwal Pelajaran -->
+  <section id="jadwal">
+    <h2>Jadwal Pelajaran</h2>
+    <div id="schedule"></div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="galeri">
+    <h2>Galeri Kelas</h2>
+    <div class="gallery">
+      <img src="foto1.png" alt="Foto 1">
+      <img src="foto2.png" alt="Foto 2">
+      <img src="foto3.png" alt="Foto 3">
+      <img src="foto4.png" alt="Foto 4">
+      <img src="foto5.png" alt="Foto 5">
+      <img src="foto6.png" alt="Foto 6">
+      <!-- Tambahkan hingga 6 foto -->
+    </div>
+  </section>
+
+  <!-- Kuis -->
+  <section id="kuis">
+    <h2>Kuis</h2>
+    <form id="quiz-form">
+      <!-- Soal-soal akan diisi melalui JavaScript -->
+      <div id="quiz-questions"></div>
+      <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+    <p id="result"></p>
+  </section>
+
+  <!-- Copyright -->
+  <footer>
+    <p>&copy; 2024 Awakening Creative. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

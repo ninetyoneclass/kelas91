@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NinetyOne. Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scripted.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Jadwal Mata Pelajaran</h1>
+        <button onclick="goBack()">Kembali</button>
+    </header>
+
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th>Hari</th>
+                    <th>Mata Pelajaran</th>
+                    <th>Jam</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Senin</td>
+                    <td>PJOK, Bahasa Inggris, Bahasa Indonesia</td>
+                    <td>07:00 - 13:30</td>
+                </tr>
+                <tr>
+                    <td>Selasa</td>
+                    <td>PPKn, Bahasa Inggris, IPA, IPS</td>
+                    <td>07:00 - 13:30</td>
+                </tr>
+                <tr>
+                    <td>Rabu</td>
+                    <td>IPS, MTK, TIK</td>
+                    <td>08:20 - 13:30</td>
+                </tr>
+                <tr>
+                    <td>Kamis</td>
+                    <td>IPA, BK, MTK, Bahasa Indonesia</td>
+                    <td>07:00 - 13:30</td>
+                </tr>
+                <tr>
+                    <td>Jumat</td>
+                    <td>Pendidikan Agama, Prakarya</td>
+                    <td>07:00 - 11:20</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        
+        function goBack() {
+    window.location.href = "index.html"; // Pindah ke halaman utama
+    setTimeout(() => {
+        window.history.pushState(null, null, "index.html"); // Hapus riwayat lama
+    }, 10);
+        }
+    </script>
+    
+</body>
+</html>

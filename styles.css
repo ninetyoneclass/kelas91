@@ -1,95 +1,274 @@
+/* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  color: #fff;
+  background-color: #000;
+}
+
+/* ✨ Fullscreen loading */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black; /* Background loading */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* ✨ Animasi spinner di tengah */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Memastikan posisi tengah */
+}
+
+.loading-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* ✨ Animasi teks "Loading..." */
+#loading-screen p {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    animation: fadeInOut 1.5s infinite;
+}
+
+/* ✨ Animasi berputar untuk spinner */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ✨ Animasi fade in-out untuk teks */
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* ✨ Sembunyikan loading setelah selesai */
+#loading-screen.hide {
+    opacity: 0;
+    visibility: hidden;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #2c3e50;
-  color: white;
   padding: 10px 20px;
+  background-color: #111;
 }
 
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
+.logo {
+  height: 60px; /* Sesuaikan tinggi logo */
+  width: auto;  /* Agar proporsinya tetap */
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 9px;
+#datetime {
+  font-size: 1rem;
 }
 
-nav ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
+/* ✨ Background blur */
+#music-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Efek transparan */
+    backdrop-filter: blur(5px); /* Efek blur */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.alert {
-  background-color: #e74c3c;
-  color: white;
+/* ✨ Box popup */
+.popup-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+/* ✨ Warna tulisan agar lebih kontras */
+.popup-box p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333; /* Ganti warna tulisan jadi lebih gelap */
+    margin-bottom: 15px;
+}
+
+/* ✨ Tombol */
+.popup-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.popup-btn.yes {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.popup-btn.yes:hover {
+    background-color: #45a049;
+}
+
+.popup-btn.no {
+    background-color: #f44336;
+    color: white;
+}
+
+.popup-btn.no:hover {
+    background-color: #d32f2f;
+}
+
+/* ✨ Animasi muncul */
+#music-popup.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#music-popup.show .popup-box {
+    transform: scale(1);
+}
+
+.marquee {
+  background-color: #222;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.marquee p {
+  display: inline-block;
+  padding: 10px 20px;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.welcome {
   text-align: center;
-  padding: 10px 0;
+  margin: 10px 0;
 }
 
-section {
-  margin: 20px;
+.description {
   padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.team .member img {
-  width: 165px; /* Ukuran lebar gambar */
-  height: 165px; /* Ukuran tinggi gambar */
-  object-fit: cover; /* Memastikan gambar tetap proporsional */
-  border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
-  border: 2px solid #2c3e50; /* Menambahkan border untuk mempercantik */
-}
-
-.team .member {
   text-align: center;
-  margin: 10px; /* Memberikan jarak antar anggota */
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
 
-.team {
+.schedule, .music-player {
+  margin: 20px auto;
+  padding: 20px;
+  background: #222;
+  border-radius: 10px;
+  width: 80%;
+} 
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.members {
+  text-align: center;
+  padding: 20px;
+}
+
+.member-list {
   display: flex;
-  flex-wrap: wrap; /* Supaya responsif, otomatis turun jika layar kecil */
-  justify-content: center; /* Agar anggota rata di tengah */
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
 }
 
-.gallery img {
-  width: 150px; /* Ukuran lebar gambar */
-  height: 150px; /* Ukuran tinggi gambar */
-  object-fit: cover; /* Memastikan gambar tetap proporsional */
-  border-radius: 8px; /* Sedikit melengkungkan sudut */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek modern */
-  transition: transform 0.3s; /* Efek saat hover */
+.member {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 200px;
 }
 
-.gallery img:hover {
-  transform: scale(1.1); /* Membesarkan sedikit saat dihover */
+.member img {
+  margin-top: 45px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid #fff;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsif, menyesuaikan ukuran layar */
-  gap: 10px; /* Jarak antar gambar */
-  justify-items: center; /* Agar gambar rata tengah */
+.member h3 {
+  margin-top: 100px;
+  font-size: 1.2rem;
+}
+
+.music-player button {
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px;
+  cursor: pointer;
 }
 
 footer {
+  background-color: #111;
   text-align: center;
   padding: 10px;
-  background-color: #2c3e50;
-  color: white;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
 }
